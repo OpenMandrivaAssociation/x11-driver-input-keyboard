@@ -45,7 +45,7 @@ rm -rf %{buildroot}
 %{_libdir}/xorg/modules/input/keyboard_drv.so
 %{_libdir}/xorg/modules/input/kbd_drv.la
 %{_libdir}/xorg/modules/input/kbd_drv.so
-%{_mandir}/man4/kbd.4.bz2
-%{_mandir}/man4/keyboard.4.bz2
+%{_mandir}/man4/kbd.*
+%{_mandir}/man4/keyboard.*
 
 
