@@ -1,12 +1,14 @@
 Name: x11-driver-input-keyboard
 Version: 1.2.2
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: Xorg input driver for keyboards
 Group: System/X11
 URL: http://xorg.freedesktop.org
 Source: http://xorg.freedesktop.org/releases/individual/driver/xf86-input-keyboard-%{version}.tar.bz2
 License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
+
+Patch1: xf86-input-keyboard-1.2.2-save-context.patch
 
 BuildRequires: x11-proto-devel >= 1.4
 BuildRequires: x11-server-devel >= 1.4
@@ -23,6 +25,7 @@ the Xorg server.
 
 %prep
 %setup -q -n xf86-input-keyboard-%{version}
+%patch1 -p1 -b .save-context
 
 %build
 %configure2_5x
