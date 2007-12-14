@@ -1,15 +1,25 @@
 Name: x11-driver-input-keyboard
 Version: 1.2.2
-Release: %mkrel 4
+Release: %mkrel 5
 Summary: Xorg input driver for keyboards
 Group: System/X11
-URL: http://xorg.freedesktop.org
-Source: http://xorg.freedesktop.org/releases/individual/driver/xf86-input-keyboard-%{version}.tar.bz2
+
+########################################################################
+# git clone git//git.mandriva.com/people/pcpa/xorg/drivers/xf86-input-keyboard  xorg/drivers/xf86-input-keyboard
+# cd xorg/drivers/xf86-input/keyboard
+# git-archive --format=tar --prefix=xf86-input-keyboard-1.2.2/ master | bzip2 -9 > xf86-input-keyboard-1.2.2.tar.bz2
+########################################################################
+Source0: xf86-input-keyboard-%{version}.tar.bz2
+
 License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
 
-Patch0: xf86-input-keyboard-1.2.2-save-context.patch
-Patch1: xf86-input-keyboard-1.2.2-save-context-2.patch
+########################################################################
+# git-format-patch master..origin/mandriva+gpl
+Patch1: 0001-Update-for-new-policy-of-hidden-symbols-and-common-m.patch
+Patch2: 0002-Add-support-for-the-SAVE_CONTEXT-patch-available-in.patch
+Patch3: 0003-Missing-patch-to-avoid-problems-with-VT-switches.patch
+########################################################################
 
 BuildRequires: x11-proto-devel >= 1.4
 BuildRequires: x11-server-devel >= 1.4-6mdv
@@ -26,10 +36,13 @@ the Xorg server.
 
 %prep
 %setup -q -n xf86-input-keyboard-%{version}
-%patch0 -p1 -b .save-context
-%patch1 -p1 -b .save-context2
+
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
+autoreconf -ifs
 %configure2_5x
 %make
 
