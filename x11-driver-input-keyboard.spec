@@ -5,7 +5,7 @@ Summary: Xorg input driver for keyboards
 Group: System/X11
 URL: http://xorg.freedesktop.org
 ########################################################################
-# git clone git://git.mandriva.com/people/pcpa/xorg/drivers/xf86-input-keyboard  xorg/drivers/xf86-input-keyboard
+# git clone git://git.mandriva.com/people/pcpa/xorg/drivers/xf86-input-keyboard xorg/drivers/xf86-input-keyboard
 # cd xorg/drivers/xf86-input/keyboard
 # git-archive --format=tar --prefix=xf86-input-keyboard-1.2.2/ xf86-input-keyboard-1.2.2 | bzip2 -9 > xf86-input-keyboard-1.2.2.tar.bz2
 ########################################################################
@@ -22,7 +22,8 @@ Patch6: 0006-Missing-patch-to-avoid-problems-with-VT-switches.patch
 ########################################################################
 BuildRequires: x11-proto-devel >= 1.4
 BuildRequires: x11-server-devel >= 1.4-6mdv
-BuildRequires: x11-util-macros >= 1.0.1
+BuildRequires: x11-util-macros >= 1.1.5-4mdk
+BuildRequires: x11-util-modular
 Conflicts: x11-server < 1.4
 
 %description
@@ -31,6 +32,14 @@ the standard OS-provided keyboard interface.  It is is built-in to the core X
 server, and multiple instances are not supported. A loadable driver, kbd, is
 available, and is planned to replace the keyboard driver in a future release of
 the Xorg server.
+
+%package devel
+Summary: Development files for %{name}
+Group: Development/X11
+License: MIT
+
+%description devel
+Development files for %{name}
 
 %prep
 %setup -q -n xf86-input-keyboard-%{version}
@@ -50,13 +59,21 @@ autoreconf -ifs
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+# Create list of dependencies
+x-check-deps.pl
+for deps in *.deps; do
+    install -D -m 644 $deps %{buildroot}/%{_datadir}/X11/mandriva/$deps
+done
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{_libdir}/xorg/modules/input/kbd_drv.la
 %{_libdir}/xorg/modules/input/kbd_drv.so
 %{_mandir}/man4/kbd.*
 
+%files devel
+%defattr(-,root,root)
+%{_libdir}/xorg/modules/input/*.la
+%{_datadir}/X11/mandriva/*.deps
