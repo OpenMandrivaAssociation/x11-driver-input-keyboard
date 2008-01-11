@@ -1,3 +1,5 @@
+%define debug_package	%{nil}
+
 Name: x11-driver-input-keyboard
 Version: 1.2.2
 Release: %mkrel 5
@@ -20,9 +22,12 @@ Patch4: 0004-Update-for-new-policy-of-hidden-symbols-and-common-m.patch
 Patch5: 0005-Add-support-for-the-SAVE_CONTEXT-patch-available-in.patch
 Patch6: 0006-Missing-patch-to-avoid-problems-with-VT-switches.patch
 ########################################################################
-BuildRequires: x11-proto-devel >= 1.4
-BuildRequires: x11-server-devel >= 1.4-6mdv
-BuildRequires: x11-util-macros >= 1.1.5-4mdk
+BuildRequires: x11-util-macros		>= 1.1.5-4mdk
+#BuildRequires: gcc			>= 4.2.2
+#BuildRequires: glibc-devel		>= 2.7
+BuildRequires: libpixman-1-devel	>= 0.9.6
+BuildRequires: x11-proto-devel		>= 7.3
+BuildRequires: x11-server-devel		>= 1.4
 Conflicts: x11-server < 1.4
 
 %description
