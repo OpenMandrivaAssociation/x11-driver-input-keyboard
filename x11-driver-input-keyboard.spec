@@ -14,17 +14,16 @@ URL: http://xorg.freedesktop.org
 Source0: xf86-input-keyboard-%{version}.tar.bz2
 License: MIT
 ########################################################################
-# git-format-patch xf86-input-keyboard-1.2.2..origin/mandriva+gpl
+# git-format-patch xf86-input-keyboard-1.2.2..origin/mandriva+custom
 Patch1: 0001-Remove-the-legacy-keyboard-driver-s-manpage.patch
 Patch2: 0002-Sun-bug-6425775-Xserver-is-blocked-when-a-program-r.patch
 Patch3: 0003-Update-kbd-man-page-to-say-it-has-replaced-keyboard.patch
 Patch4: 0004-Update-for-new-policy-of-hidden-symbols-and-common-m.patch
 Patch5: 0005-Add-support-for-the-SAVE_CONTEXT-patch-available-in.patch
 Patch6: 0006-Missing-patch-to-avoid-problems-with-VT-switches.patch
+Patch7: 0007-lnx-Automatically-inherit-the-vt-s-numlock-and-caps.patch
 ########################################################################
 BuildRequires: x11-util-macros		>= 1.1.5-4mdk
-#BuildRequires: gcc			>= 4.2.2
-#BuildRequires: glibc-devel		>= 2.7
 BuildRequires: libpixman-1-devel	>= 0.9.6
 BuildRequires: x11-proto-devel		>= 7.3
 BuildRequires: x11-server-devel		>= 1.4
@@ -46,6 +45,7 @@ the Xorg server.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 autoreconf -ifs
