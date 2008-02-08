@@ -1,6 +1,6 @@
 Name: x11-driver-input-keyboard
 Version: 1.2.2
-Release: %mkrel 8
+Release: %mkrel 9
 Summary: Xorg input driver for keyboards
 Group: System/X11
 URL: http://xorg.freedesktop.org
@@ -20,6 +20,7 @@ Patch3: 0003-Don-t-sleep-1-on-VT-entry.patch
 Patch4: 0004-Fix-parameters-order-for-printWsType.patch
 Patch5: 0005-lnx-Automatically-inherit-the-vt-s-numlock-and-caps.patch
 Patch6: 0006-Add-support-for-the-SAVE_CONTEXT-Mandriva-patch.patch
+Patch7: 0007-Update-leds-properly-based-on-console-state.patch
 
 %description
 This package provide Xorg input driver for keyboards.  The "keyboard" driver is
@@ -37,6 +38,7 @@ the Xorg server.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 %configure2_5x
