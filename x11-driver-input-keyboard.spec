@@ -25,7 +25,7 @@ the Xorg server.
 
 %prep
 %setup -q -n xf86-input-keyboard-%{version}
-%patch1 -p1 -b.fix-compilation-for-1.6
+%patch1 -p1 -b .fix-compilation-for-1.6
 
 %build
 %configure2_5x
