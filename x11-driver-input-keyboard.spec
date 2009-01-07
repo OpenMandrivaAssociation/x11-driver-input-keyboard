@@ -13,6 +13,9 @@ BuildRequires: x11-server-devel >= 1.4-6mdv
 BuildRequires: x11-util-macros >= 1.0.1
 Conflicts: x11-server < 1.4
 
+# Fix compilation with x server 1.6
+Patch1: 0001-Move-atKeynames.h-and-xf86CommonSpecialKey-here.patch
+
 %description
 This package provide Xorg input driver for keyboards.  The "keyboard" driver is
 the standard OS-provided keyboard interface.  It is is built-in to the core X
@@ -22,6 +25,7 @@ the Xorg server.
 
 %prep
 %setup -q -n xf86-input-keyboard-%{version}
+%patch1 -p1 -b.fix-compilation-for-1.6
 
 %build
 %configure2_5x
