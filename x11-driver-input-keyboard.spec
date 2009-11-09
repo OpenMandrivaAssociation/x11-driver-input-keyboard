@@ -1,5 +1,5 @@
 Name: x11-driver-input-keyboard
-Version: 1.3.2
+Version: 1.4.0
 Release: %mkrel 1
 Summary: Xorg input driver for keyboards
 Group: System/X11
