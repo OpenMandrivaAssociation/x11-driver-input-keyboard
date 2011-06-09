@@ -1,6 +1,6 @@
 Name: x11-driver-input-keyboard
-Version: 1.5.99.901
-Release: %mkrel 3
+Version: 1.6.0
+Release: %mkrel 1
 Summary: Xorg input driver for keyboards
 Group: System/X11
 URL: http://xorg.freedesktop.org
