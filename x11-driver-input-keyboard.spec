@@ -1,6 +1,6 @@
 Name: x11-driver-input-keyboard
 Version: 1.6.1
-Release: 1
+Release: 2
 Summary: Xorg input driver for keyboards
 Group: System/X11
 License: MIT
@@ -8,7 +8,7 @@ URL: http://xorg.freedesktop.org
 Source: http://xorg.freedesktop.org/releases/individual/driver/xf86-input-keyboard-%{version}.tar.bz2
 
 BuildRequires: x11-proto-devel >= 1.4
-BuildRequires: x11-server-devel >= 1.4-6mdv
+BuildRequires: x11-server-devel >= 1.12
 BuildRequires: x11-util-macros >= 1.0.1
 Conflicts: x11-server < 1.4
 
