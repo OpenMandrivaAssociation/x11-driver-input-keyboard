@@ -6,7 +6,7 @@ diff -Naur xf86-input-keyboard-1.6.2/src/Makefile.am xf86-input-keyboard-1.6.2.t
  kbd_drv_la_LDFLAGS = -avoid-version -module
  kbd_drv_la_SOURCES = kbd.c xf86OSKbd.h xf86Keymap.h atKeynames.h
 -kbd_drv_la_LIBADD = $(XORG_LIBS)
-+kbd_drv_la_LIBADD = $(XORG_LIBS) -lXi
++kbd_drv_la_LIBADD = $(XORG_LIBS) -lxi
  kbd_drv_ladir = @inputdir@
  
  BSD_SRCS = bsd_KbdMap.c bsd_kbd.c bsd_kbd.h at_scancode.c
