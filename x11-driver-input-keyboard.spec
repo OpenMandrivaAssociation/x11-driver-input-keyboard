@@ -1,6 +1,6 @@
 Name:		x11-driver-input-keyboard
 Version:	1.6.2
-Release:	5
+Release:	6
 Summary:	Xorg input driver for keyboards
 Group:		System/X11
 License:	MIT
