@@ -1,6 +1,6 @@
 Name:		x11-driver-input-keyboard
-Version:	1.6.2
-Release:	6
+Version:	1.7.0
+Release:	1
 Summary:	Xorg input driver for keyboards
 Group:		System/X11
 License:	MIT
@@ -14,6 +14,7 @@ BuildRequires:	pkgconfig(xi)
 Conflicts:	x11-server < 1.4
 
 Requires:	x11-server-common %(xserver-sdk-abi-requires xinput)
+Requires:	udev
 
 %description
 This package provide Xorg input driver for keyboards.  The "keyboard" driver is
