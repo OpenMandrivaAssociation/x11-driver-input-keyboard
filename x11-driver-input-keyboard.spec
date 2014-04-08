@@ -1,6 +1,6 @@
 Name:		x11-driver-input-keyboard
-Version:	1.7.0
-Release:	6
+Version:	1.8.0
+Release:	1
 Summary:	Xorg input driver for keyboards
 Group:		System/X11
 License:	MIT
@@ -34,8 +34,7 @@ autoreconf -fiv
 
 %install
 %makeinstall_std
-find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
 %files
 %{_libdir}/xorg/modules/input/kbd_drv.so
-%{_mandir}/man4/kbd.*
+%{_mandir}/man4/kbd.4*
