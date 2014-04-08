@@ -26,10 +26,9 @@ the Xorg server.
 %prep
 %setup -qn xf86-input-keyboard-%{version}
 %apply_patches
-
-%build
 autoreconf -fiv
 
+%build
 %configure2_5x
 %make
 
