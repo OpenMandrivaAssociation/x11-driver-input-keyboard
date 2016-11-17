@@ -1,5 +1,5 @@
 Name:		x11-driver-input-keyboard
-Version:	1.8.1
+Version:	1.9.0
 Release:	1
 Summary:	Xorg input driver for keyboards
 Group:		System/X11
