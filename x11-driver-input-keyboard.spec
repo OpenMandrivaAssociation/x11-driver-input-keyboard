@@ -25,7 +25,7 @@ the Xorg server.
 
 %prep
 %setup -qn xf86-input-keyboard-%{version}
-%apply_patches
+%autopatch -p1
 autoreconf -fiv
 
 %build
