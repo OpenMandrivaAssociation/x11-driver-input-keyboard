@@ -4,7 +4,7 @@ Release:	1
 Summary:	Xorg input driver for keyboards
 Group:		System/X11
 License:	MIT
-URL:		http://xorg.freedesktop.org
+URL:		https://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-input-keyboard-%{version}.tar.bz2
 Patch0:		xf86-input-keyboard-1.6.2-link-against-xi.patch
 BuildRequires:	x11-proto-devel >= 1.4
