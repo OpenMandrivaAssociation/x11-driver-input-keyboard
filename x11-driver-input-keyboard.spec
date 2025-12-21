@@ -7,6 +7,11 @@ License:	MIT
 URL:		https://xorg.freedesktop.org
 Source0:	https://xorg.freedesktop.org/releases/individual/driver/xf86-input-keyboard-%{version}.tar.xz
 Patch0:		xf86-input-keyboard-1.6.2-link-against-xi.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	x11-proto-devel >= 1.4
 BuildRequires:	x11-server-devel >= 1.12
 BuildRequires:	x11-util-macros >= 1.0.1
